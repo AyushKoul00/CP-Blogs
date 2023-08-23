@@ -1,7 +1,7 @@
 ---
 title: "Search in Rotated Sorted Array"
-categories: [Concepts, Binary Search]
-tags: [binary search]     # TAG names should always be lowercase
+categories: [Problems]
+tags: [binary search problems]     # TAG names should always be lowercase
 author: Ayush Koul
 layout: post
 toc: true
@@ -44,6 +44,24 @@ The logic still holds: We can use Binary search to find pivot (look for first T)
 ```
 [Source](https://youtu.be/GU7DpgHINWQ?t=1089)
 
+```cpp
+int search(vector<int> &a, int t)
+{
+    int n = a.size();
+    int l = 0, r = n - 1;
+    // Condition: a[i] <= a[n-1] for all i (find first T)
+    while (l < r)
+    {
+        int mid = l + (r - l) / 2;
+        if (a[mid] <= a[n - 1])
+            r = mid;
+        else
+            l = mid + 1;
+    }
+    // Now l and r both equal the pivot's index
+    // ...   
+}
+```
 ### Approach 1: Find Pivot Index + Binary Search
 We will first find where the **pivot (minimum element)** is in the array (let's assume the pivot's index is `k`). Then we will use **2 binary searches** to look for target between `[0..k-1]` and `[k..n-1]`:
 

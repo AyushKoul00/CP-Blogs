@@ -1,7 +1,7 @@
 ---
 title: "Unbounded Knapsack"
 categories: [Concepts, Dynamic Programming]
-tags: [knapsack]     # TAG names should always be lowercase
+tags: [algorithms]     # TAG names should always be lowercase
 author: Ayush Koul
 layout: post
 toc: true
